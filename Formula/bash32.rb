@@ -9,7 +9,7 @@ class Bash < Formula
     version "3.2.57"
 
   # Keep this versioned formula separate from the current Bash.
-  keg_only :versioned_formula
+  # keg_only :versioned_formula
 
   depends_on "readline"
 
