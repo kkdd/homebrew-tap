@@ -2,17 +2,16 @@ class Bash32 < Formula
   desc "Bourne-Again SHell, a UNIX command interpreter"
   homepage "https://www.gnu.org/software/bash/"
 
-  keg_only :versioned_formula
+  url "https://ftpmirror.gnu.org/gnu/bash/bash-3.2.tar.gz"
+  mirror "https://mirrors.ocf.berkeley.edu/gnu/bash/bash-3.2.tar.gz"
+  sha256 "26c99025b59e30779300b68adb764f824974d267a4d7cc1b347d14a2393f9fb4"
+  version "3.2.57"
 
-  stable do
-    url "https://ftpmirror.gnu.org/gnu/bash/bash-3.2.tar.gz"
-    mirror "https://mirrors.ocf.berkeley.edu/gnu/bash/bash-3.2.tar.gz"
-    sha256 "26c99025b59e30779300b68adb764f824974d267a4d7cc1b347d14a2393f9fb4"
-    version "3.2.57"
+  keg_only :versioned_formula
 
   depends_on "readline"
 
-    %w[
+  %w[
       001 beda60ce6186fafa36cd0a98db9ced42cff68daee4342cca73167fb0f2f43eaa
       002 a0ca49a3c47678ad074c990bdc871fcec680749b7f04f2def6527f04c589c40a
       003 7ec9e5e7e402e43b12bfd3a9237f4f171029fc7f58e59335abf3ccb455a5a84d
@@ -70,12 +69,11 @@ class Bash32 < Formula
       055 c0e816700837942ed548da74e5917f74b70cbbbb10c9f2caf73e8e06a0713d0a
       056 063a8d8d74e4407bf07a32b965b8ef6d213a66abdb6af26cc3584a437a56bbb4
       057 5fc689394d515990f5ea74e2df765fc6e5e42ca44b4591b2c6f9be4b0cadf0f0
-    ].each_slice(2) do |p, checksum|
-      patch :p0 do
-        url "https://ftpmirror.gnu.org/gnu/bash/bash-3.2-patches/bash32-#{p}"
-        mirror "https://mirrors.ocf.berkeley.edu/gnu/bash/bash-3.2-patches/bash32-#{p}"
-        sha256 checksum
-      end
+  ].each_slice(2) do |p, checksum|
+    patch :p0 do
+      url "https://ftpmirror.gnu.org/gnu/bash/bash-3.2-patches/bash32-#{p}"
+      mirror "https://mirrors.ocf.berkeley.edu/gnu/bash/bash-3.2-patches/bash32-#{p}"
+      sha256 checksum
     end
   end
 
