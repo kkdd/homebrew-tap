@@ -1,4 +1,4 @@
-class Bash < Formula
+class Bash32 < Formula
   desc "Bourne-Again SHell, a UNIX command interpreter"
   homepage "https://www.gnu.org/software/bash/"
 
