@@ -8,8 +8,7 @@ class Bash32 < Formula
     sha256 "26c99025b59e30779300b68adb764f824974d267a4d7cc1b347d14a2393f9fb4"
     version "3.2.57"
 
-  # Keep this versioned formula separate from the current Bash.
-  # keg_only :versioned_formula
+  keg_only :versioned_formula
 
   depends_on "readline"
 
