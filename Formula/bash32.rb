@@ -3,7 +3,7 @@ class Bash32 < Formula
   homepage "https://www.gnu.org/software/bash/"
 
   stable do
-    url "https://ftp.gnu.org/gnu/bash/bash-3.2.tar.gz"
+    url "https://ftpmirror.gnu.org/gnu/bash/bash-3.2.tar.gz"
     mirror "https://mirrors.ocf.berkeley.edu/gnu/bash/bash-3.2.tar.gz"
     sha256 "26c99025b59e30779300b68adb764f824974d267a4d7cc1b347d14a2393f9fb4"
     version "3.2.57"
@@ -73,7 +73,7 @@ class Bash32 < Formula
       057 5fc689394d515990f5ea74e2df765fc6e5e42ca44b4591b2c6f9be4b0cadf0f0
     ].each_slice(2) do |p, checksum|
       patch :p0 do
-        url "https://ftp.gnu.org/gnu/bash/bash-3.2-patches/bash32-#{p}"
+        url "https://ftpmirror.gnu.org/gnu/bash/bash-3.2-patches/bash32-#{p}"
         mirror "https://mirrors.ocf.berkeley.edu/gnu/bash/bash-3.2-patches/bash32-#{p}"
         sha256 checksum
       end
