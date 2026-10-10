@@ -2,13 +2,13 @@ class Bash32 < Formula
   desc "Bourne-Again SHell, a UNIX command interpreter"
   homepage "https://www.gnu.org/software/bash/"
 
+  keg_only :versioned_formula
+
   stable do
     url "https://ftpmirror.gnu.org/gnu/bash/bash-3.2.tar.gz"
     mirror "https://mirrors.ocf.berkeley.edu/gnu/bash/bash-3.2.tar.gz"
     sha256 "26c99025b59e30779300b68adb764f824974d267a4d7cc1b347d14a2393f9fb4"
     version "3.2.57"
-
-  keg_only :versioned_formula
 
   depends_on "readline"
 
