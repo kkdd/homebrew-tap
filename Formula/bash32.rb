@@ -79,7 +79,7 @@ class Bash32 < Formula
   end
 
   def install
-    gcc = Formula["gcc"].opt_bin/"gcc-#{Formula["gcc"].version.major}"
+    gcc = formula_opt_bin("gcc").opt_bin/"gcc-#{Formula["gcc"].version.major}"
     ENV["CC"] = gcc.to_s
     system "./configure",
            "--prefix=#{prefix}",
