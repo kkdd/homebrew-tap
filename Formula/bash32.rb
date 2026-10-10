@@ -9,6 +9,7 @@ class Bash32 < Formula
 
   keg_only :versioned_formula
 
+  depends_on "gcc" => :build
   depends_on "readline"
 
   %w[
@@ -78,6 +79,8 @@ class Bash32 < Formula
   end
 
   def install
+    gcc = Formula["gcc"].opt_bin/"gcc-#{Formula["gcc"].version.major}"
+    ENV["CC"] = gcc.to_s
     system "./configure",
            "--prefix=#{prefix}",
            "--with-installed-readline"
