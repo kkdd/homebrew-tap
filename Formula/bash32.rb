@@ -82,7 +82,15 @@ class Bash32 < Formula
     gcc = formula_opt_bin("gcc")/"gcc-#{Formula["gcc"].version.major}"
     ENV["CC"] = gcc.to_s
     ENV.append_to_cflags "-std=gnu17"
-    system "./configure",
+
+    args = [
+      "--prefix=#{prefix}",
+      "--with-installed-readline",
+    ]
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux?
+    args << "--build=aarch64-apple-darwin" if OS.mac? && Hardware::CPU.arm?
+
+    system "./configure", *args,
            "--prefix=#{prefix}",
            "--with-installed-readline"
     system "make"
