@@ -81,6 +81,7 @@ class Bash32 < Formula
   def install
     gcc = formula_opt_bin("gcc")/"gcc-#{Formula["gcc"].version.major}"
     ENV["CC"] = gcc.to_s
+    ENV.append_to_cflags "-std=gnu17"
     system "./configure",
            "--prefix=#{prefix}",
            "--with-installed-readline"
