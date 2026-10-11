@@ -10,6 +10,7 @@ class Bash32 < Formula
   keg_only :versioned_formula
 
   depends_on "gcc" => :build
+  depends_on "bison" => :build
   depends_on "readline"
 
   %w[
