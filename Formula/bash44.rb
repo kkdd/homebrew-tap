@@ -62,13 +62,12 @@ class Bash44 < Formula
     system "make", "install"
   end
 
-  def caveats; <<~EOS
-    In order to use this build of bash as your login shell,
-    it must be added to /etc/shells.
-    EOS
+  test do
+    assert_match(/GNU bash, version 3\.2\.57/,
+                 shell_output("#{bin}/bash --version"))
+
+    assert_equal "hello",
+                 shell_output("#{bin}/bash -c 'printf hello'")
   end
 
-  test do
-    assert_equal "hello", shell_output("#{bin}/bash -c \"echo hello\"").strip
-  end
 end
