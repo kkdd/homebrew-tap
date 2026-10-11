@@ -5,7 +5,6 @@ class Bash44 < Formula
   url "https://ftpmirror.gnu.orggnu/bash/bash-4.4.tar.gz"
   mirror "https://mirrors.ocf.berkeley.edu/gnu/bash/bash-4.4.tar.gz"
   mirror "https://mirrors.kernel.org/gnu/bash/bash-4.4.tar.gz"
-  mirror "https://ftpmirror.gnu.org/bash/bash-4.4.tar.gz"
   mirror "https://gnu.cu.be/bash/bash-4.4.tar.gz"
   mirror "https://mirror.unicorncloud.org/gnu/bash/bash-4.4.tar.gz"
   version "4.4.19"
@@ -40,7 +39,6 @@ class Bash44 < Formula
       url "https://ftpmirror.gnu.org/gnu/bash/bash-4.4-patches/bash44-#{p}"
       mirror "https://mirrors.ocf.berkeley.edu/gnu/bash/bash-4.4-patches/bash44-#{p}"
       mirror "https://mirrors.kernel.org/gnu/bash/bash-4.4-patches/bash44-#{p}"
-      mirror "https://ftpmirror.gnu.org/bash/bash-4.4-patches/bash44-#{p}"
       mirror "https://gnu.cu.be/bash/bash-4.4-patches/bash44-#{p}"
       mirror "https://mirror.unicorncloud.org/gnu/bash/bash-4.4-patches/bash44-#{p}"
       sha256 checksum
