@@ -69,5 +69,4 @@ class Bash44 < Formula
     assert_equal "hello",
                  shell_output("#{bin}/bash -c 'printf hello'")
   end
-
 end
