@@ -63,7 +63,7 @@ class Bash44 < Formula
   end
 
   test do
-    assert_match(/GNU bash, version 3\.2\.57/,
+    assert_match(/GNU bash, version 4\.4\.19/,
                  shell_output("#{bin}/bash --version"))
 
     assert_equal "hello",
