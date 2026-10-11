@@ -8,8 +8,12 @@ class Bash44 < Formula
   mirror "https://ftpmirror.gnu.org/bash/bash-4.4.tar.gz"
   mirror "https://gnu.cu.be/bash/bash-4.4.tar.gz"
   mirror "https://mirror.unicorncloud.org/gnu/bash/bash-4.4.tar.gz"
-  sha256 "d86b3392c1202e8ff5a423b302e6284db7f8f435ea9f39b5b1b20fd3ac36dfcb"
   version "4.4.19"
+  sha256 "d86b3392c1202e8ff5a423b302e6284db7f8f435ea9f39b5b1b20fd3ac36dfcb"
+
+  keg_only :versioned_formula
+
+  depends_on "readline"
 
   %w[
     001 3e28d91531752df9a8cb167ad07cc542abaf944de9353fe8c6a535c9f1f17f0f
@@ -42,10 +46,6 @@ class Bash44 < Formula
     sha256 checksum
     end
   end
-
-  keg_only :versioned_formula
-
-  depends_on "readline"
 
   def install
     system "./configure", "--prefix=#{prefix}"
