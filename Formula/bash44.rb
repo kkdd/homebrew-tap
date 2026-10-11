@@ -47,16 +47,14 @@ class Bash44 < Formula
     end
   end
 
+  keg_only :versioned_formula
+
+  depends_on "gcc" => :build
   depends_on "readline"
 
   def install
-    # When built with SSH_SOURCE_BASHRC, bash will source ~/.bashrc when
-    # it's non-interactively from sshd.  This allows the user to set
-    # environment variables prior to running the command (e.g. PATH).  The
-    # /bin/bash that ships with macOS defines this, and without it, some
-    # things (e.g. git+ssh) will break if the user sets their default shell to
-    # Homebrew's bash instead of /bin/bash.
-    ENV.append_to_cflags "-DSSH_SOURCE_BASHRC"
+    gcc = formula_opt_bin("gcc")/"gcc-#{Formula["gcc"].version.major}"
+    ENV["CC"] = gcc.to_s
 
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"
