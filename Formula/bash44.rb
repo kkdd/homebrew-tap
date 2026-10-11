@@ -37,13 +37,13 @@ class Bash44 < Formula
     019 27170d6edfe8819835407fdc08b401d2e161b1400fe9d0c5317a51104c89c11e
   ].each_slice(2) do |p, checksum|
     patch :p0 do
-    url "https://ftpmirror.gnu.org/gnu/bash/bash-4.4-patches/bash44-#{p}"
-    mirror "https://mirrors.ocf.berkeley.edu/gnu/bash/bash-4.4-patches/bash44-#{p}"
-    mirror "https://mirrors.kernel.org/gnu/bash/bash-4.4-patches/bash44-#{p}"
-    mirror "https://ftpmirror.gnu.org/bash/bash-4.4-patches/bash44-#{p}"
-    mirror "https://gnu.cu.be/bash/bash-4.4-patches/bash44-#{p}"
-    mirror "https://mirror.unicorncloud.org/gnu/bash/bash-4.4-patches/bash44-#{p}"
-    sha256 checksum
+      url "https://ftpmirror.gnu.org/gnu/bash/bash-4.4-patches/bash44-#{p}"
+      mirror "https://mirrors.ocf.berkeley.edu/gnu/bash/bash-4.4-patches/bash44-#{p}"
+      mirror "https://mirrors.kernel.org/gnu/bash/bash-4.4-patches/bash44-#{p}"
+      mirror "https://ftpmirror.gnu.org/bash/bash-4.4-patches/bash44-#{p}"
+      mirror "https://gnu.cu.be/bash/bash-4.4-patches/bash44-#{p}"
+      mirror "https://mirror.unicorncloud.org/gnu/bash/bash-4.4-patches/bash44-#{p}"
+      sha256 checksum
     end
   end
 
