@@ -46,6 +46,7 @@ class Bash44 < Formula
   end
 
   def install
+    ENV.append_to_cflags "-std=gnu17"
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"
   end
