@@ -49,13 +49,9 @@ class Bash44 < Formula
 
   keg_only :versioned_formula
 
-  depends_on "gcc" => :build
   depends_on "readline"
 
   def install
-    gcc = formula_opt_bin("gcc")/"gcc-#{Formula["gcc"].version.major}"
-    ENV["CC"] = gcc.to_s
-
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"
   end
