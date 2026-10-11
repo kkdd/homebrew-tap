@@ -5,7 +5,7 @@ class Bash44 < Formula
   head "https://git.savannah.gnu.org/git/bash.git"
 
   stable do
-    url "https://ftp.gnu.org/gnu/bash/bash-4.4.tar.gz"
+    url "https://ftpmirror.gnu.org/gnu/bash/bash-4.4.tar.gz"
     mirror "https://mirrors.ocf.berkeley.edu/gnu/bash/bash-4.4.tar.gz"
     mirror "https://mirrors.kernel.org/gnu/bash/bash-4.4.tar.gz"
     mirror "https://ftpmirror.gnu.org/bash/bash-4.4.tar.gz"
@@ -36,7 +36,7 @@ class Bash44 < Formula
       019 27170d6edfe8819835407fdc08b401d2e161b1400fe9d0c5317a51104c89c11e
     ].each_slice(2) do |p, checksum|
       patch :p0 do
-        url "https://ftp.gnu.org/gnu/bash/bash-4.4-patches/bash44-#{p}"
+        url "https://ftpmirror.gnu.org/gnu/bash/bash-4.4-patches/bash44-#{p}"
         mirror "https://mirrors.ocf.berkeley.edu/gnu/bash/bash-4.4-patches/bash44-#{p}"
         mirror "https://mirrors.kernel.org/gnu/bash/bash-4.4-patches/bash44-#{p}"
         mirror "https://ftpmirror.gnu.org/bash/bash-4.4-patches/bash44-#{p}"
