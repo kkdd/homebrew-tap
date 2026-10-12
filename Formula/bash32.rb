@@ -95,6 +95,10 @@ class Bash32 < Formula
     args << "--build=aarch64-apple-darwin" if OS.mac? && Hardware::CPU.arm?
 
     system "./configure", *args
+
+    system "make", "y.tab.c"
+    system "make", "builtins/libbuiltins.a"
+    system "make", "-j 1"
     system "make"
     system "make", "install"
   end
