@@ -84,6 +84,7 @@ class Bash32 < Formula
     ENV["CC"] = gcc.to_s
     ENV.append_to_cflags "-std=gnu17"
     ENV.append_to_cflags "-Wno-implicit-function-declaration"
+    ENV.append_to_cflags "-Wno-error=return-mismatch"
     ENV["CFLAGS_FOR_BUILD"] = ENV.cflags
 
     args = [
