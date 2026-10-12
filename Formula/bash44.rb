@@ -45,7 +45,13 @@ class Bash44 < Formula
 
   def install
     ENV.append_to_cflags "-std=gnu17"
-    system "./configure", "--prefix=#{prefix}"
+
+    args = [
+      "--prefix=#{prefix}",
+      "--with-installed-readline",
+    ]
+
+    system "./configure", *args
     system "make", "install"
   end
 
