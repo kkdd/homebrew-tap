@@ -91,9 +91,7 @@ class Bash32 < Formula
     args << "--build=aarch64-unknown-linux-gnu" if OS.linux?
     args << "--build=aarch64-apple-darwin" if OS.mac? && Hardware::CPU.arm?
 
-    system "./configure", *args,
-           "--prefix=#{prefix}",
-           "--with-installed-readline"
+    system "./configure", *args
     system "make"
     system "make", "install"
   end
