@@ -3,10 +3,7 @@ class Bash44 < Formula
   homepage "https://www.gnu.org/software/bash/"
 
   url "https://ftpmirror.gnu.orggnu/bash/bash-4.4.tar.gz"
-  mirror "https://mirrors.ocf.berkeley.edu/gnu/bash/bash-4.4.tar.gz"
   mirror "https://mirrors.kernel.org/gnu/bash/bash-4.4.tar.gz"
-  mirror "https://gnu.cu.be/bash/bash-4.4.tar.gz"
-  mirror "https://mirror.unicorncloud.org/gnu/bash/bash-4.4.tar.gz"
   version "4.4.19"
   sha256 "d86b3392c1202e8ff5a423b302e6284db7f8f435ea9f39b5b1b20fd3ac36dfcb"
 
@@ -37,10 +34,7 @@ class Bash44 < Formula
   ].each_slice(2) do |p, checksum|
     patch :p0 do
       url "https://ftpmirror.gnu.org/gnu/bash/bash-4.4-patches/bash44-#{p}"
-      mirror "https://mirrors.ocf.berkeley.edu/gnu/bash/bash-4.4-patches/bash44-#{p}"
       mirror "https://mirrors.kernel.org/gnu/bash/bash-4.4-patches/bash44-#{p}"
-      mirror "https://gnu.cu.be/bash/bash-4.4-patches/bash44-#{p}"
-      mirror "https://mirror.unicorncloud.org/gnu/bash/bash-4.4-patches/bash44-#{p}"
       sha256 checksum
     end
   end
