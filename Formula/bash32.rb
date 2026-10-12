@@ -87,6 +87,7 @@ class Bash32 < Formula
     args = [
       "--prefix=#{prefix}",
       "--with-installed-readline",
+      "--without-bash-malloc",
     ]
     args << "--build=aarch64-unknown-linux-gnu" if OS.linux?
     args << "--build=aarch64-apple-darwin" if OS.mac? && Hardware::CPU.arm?
