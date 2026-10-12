@@ -83,6 +83,7 @@ class Bash32 < Formula
     gcc = formula_opt_bin("gcc")/"gcc-#{Formula["gcc"].version.major}"
     ENV["CC"] = gcc.to_s
     ENV.append_to_cflags "-std=gnu17"
+    ENV["CFLAGS_FOR_BUILD"] = ENV.cflags
 
     args = [
       "--prefix=#{prefix}",
