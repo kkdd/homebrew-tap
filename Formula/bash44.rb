@@ -9,6 +9,7 @@ class Bash44 < Formula
 
   keg_only :versioned_formula
 
+  depends_on "gcc" => :build
   depends_on "readline"
 
   %w[
@@ -44,12 +45,20 @@ class Bash44 < Formula
   end
 
   def install
+    gcc = formula_opt_bin("gcc")/"gcc-#{Formula["gcc"].version.major}"
+    ENV["CC"] = gcc.to_s
     ENV.append_to_cflags "-std=gnu17"
 
     args = [
       "--prefix=#{prefix}",
       "--with-installed-readline",
     ]
+    if OS.mac?
+      args << "--build=aarch64-apple-darwin" if Hardware::CPU.arm?
+    elsif OS.linux?
+      args << "--build=aarch64-unknown-linux-gnu" if Hardware::CPU.arm?
+      args << "--build=x86_64-pc-linux-gnu" if Hardware::CPU.intel?
+    end
 
     system "./configure", *args
     system "make", "install"
