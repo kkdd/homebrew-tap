@@ -48,6 +48,9 @@ class Bash44 < Formula
     gcc = formula_opt_bin("gcc")/"gcc-#{Formula["gcc"].version.major}"
     ENV["CC"] = gcc.to_s
     ENV.append_to_cflags "-std=gnu17"
+    ENV.append_to_cflags "-Wno-implicit-int"
+    ENV.append_to_cflags "-Wno-implicit-function-declaration"
+    ENV.append_to_cflags "-Wno-error=return-mismatch"
 
     args = [
       "--prefix=#{prefix}",
