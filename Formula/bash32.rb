@@ -93,13 +93,11 @@ class Bash32 < Formula
       "--with-installed-readline",
       "--without-bash-malloc",
     ]
-    args << "--build=aarch64-apple-darwin" if OS.mac? && Hardware::CPU.arm?
-    if OS.linux?
-      if Hardware::CPU.arm?
-        args << "--build=aarch64-unknown-linux-gnu"
-      elsif Hardware::CPU.intel?
-        args << "--build=x86_64-pc-linux-gnu"
-      end
+    if OS.mac?
+      args << "--build=aarch64-apple-darwin" if Hardware::CPU.arm?
+    elsif OS.linux?
+      args << "--build=aarch64-unknown-linux-gnu" if Hardware::CPU.arm?
+      args << "--build=x86_64-pc-linux-gnu" if Hardware::CPU.intel?
     end
 
     system "./configure", *args
