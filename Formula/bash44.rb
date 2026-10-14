@@ -56,11 +56,11 @@ class Bash44 < Formula
       "--prefix=#{prefix}",
       "--with-installed-readline",
     ]
+    cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
     if OS.mac?
-      args << "--build=aarch64-apple-darwin" if Hardware::CPU.arm?
+      args << "--build=#{cpu}-apple-darwin"
     elsif OS.linux?
-      args << "--build=aarch64-unknown-linux-gnu" if Hardware::CPU.arm?
-      args << "--build=x86_64-pc-linux-gnu" if Hardware::CPU.intel?
+      args << "--build=#{cpu}-pc-linux-gnu"
     end
 
     system "./configure", *args
